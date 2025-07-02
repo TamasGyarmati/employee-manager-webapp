@@ -42,11 +42,13 @@
         </table>
       </div>
       <div class="div4">        
-        <input type="text" id="nameInput" placeholder="Lorem Ipsum" maxlength="30"/>
-        <input type="email" id="emailInput" placeholder="lorem.ipsum@gmail.com" maxlength="35"/>
-        <input type="text" id="phoneInput" placeholder="+36000000" maxlength="12"/>
-        <input type="text" id="salaryInput" placeholder="100000" maxlength="18"/>
-        <button type="submit" id="addButton" class="btn btn-primary">Add</button>
+        <form id="employeeForm">
+          <input type="text" id="nameInput" placeholder="Name" maxlength="30" required/>
+          <input type="email" id="emailInput" placeholder="Email" maxlength="35" required/>
+          <input type="tel" id="phoneInput" placeholder="Phone" maxlength="20" pattern="^\+\d{1,3}\s?\d{1,14}(\s?\d{1,13})?$" required/>
+          <input type="text" id="salaryInput" placeholder="Salary" maxlength="7" required/>
+          <button type="submit" id="addButton" class="btn btn-primary">Add</button>
+        </form>
       </div>
     </div>
   </body>

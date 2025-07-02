@@ -42,7 +42,7 @@ document.querySelector("#editForm").addEventListener("submit", (e) =>{
     .then(response => {
         if (!response.ok) throw new Error("Failed to update employee")
         alert("Employee updated succesfully");
-        window.location.href = "index.html";
+        window.location.href = "../index.html";
     })
     .catch(err => {
         alert("Error updating employee: " + err.message);
@@ -50,5 +50,5 @@ document.querySelector("#editForm").addEventListener("submit", (e) =>{
 });
 
 document.getElementById("cancelBtn").addEventListener("click", () => {
-    window.location.href = "index.html"; // vagy a lista oldalad URL-je
+    window.location.href = "../index.html";
 });
