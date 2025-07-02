@@ -18,8 +18,17 @@ grid-row-gap: 0px; /* később 80 vagy több px */
 .div3 { grid-area: 3 / 1 / 4 / 2; }
 .div4 { grid-area: 4 / 1 / 5 / 2; }
 
-h1 {
+.div1 {
     text-align: center;
+}
+
+h1 {
+    transition: transform 0.3s;
+    display: inline-block; /* parent element -> text-align: center */
+}
+
+h1:hover {
+    transform: translateY(-10px);
 }
 
 .div4 {

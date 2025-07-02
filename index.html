@@ -26,37 +26,26 @@
         </p>
       </div>
       <div class="div3">
-        <table class="table">
+        <table class="table" id="table">
           <thead>
             <tr>
-              <th scope="col">Id</th>
               <th scope="col">Name</th>
               <th scope="col">Email</th>
               <th scope="col">Phone</th>
+              <th scope="col">Salary</th>
               <th scope="col">Edit</th>
               <th scope="col">Delete</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <th scope="row">30b05084-17d1-4ad6-b019-0f4e169d9d38</th>
-              <td>Lorem Ipsum</td>
-              <td>lorem.ipsum@gmail.com</td>
-              <td>+360000000</td>
-              <td>
-                <button type="button" id="editButton" class="btn btn-warning">Edit</button>
-              </td>
-              <td>
-                <button type="button" id="deleteButton" class="btn btn-danger">Delete</button>
-              </td>
-            </tr>
+          <tbody id ="tbody">      
           </tbody>
         </table>
       </div>
       <div class="div4">        
-        <input type="text" id="nameInput" placeholder="Lorem Ipsum" maxlength="25"/>
-        <input type="email" id="emailInput" placeholder="lorem.ipsum@gmail.com" maxlength="25"/>
-        <input type="text" id="phoneInput" placeholder="+36000000" maxlength="18"/>
+        <input type="text" id="nameInput" placeholder="Lorem Ipsum" maxlength="30"/>
+        <input type="email" id="emailInput" placeholder="lorem.ipsum@gmail.com" maxlength="35"/>
+        <input type="text" id="phoneInput" placeholder="+36000000" maxlength="12"/>
+        <input type="text" id="salaryInput" placeholder="100000" maxlength="18"/>
         <button type="submit" id="addButton" class="btn btn-primary">Add</button>
       </div>
     </div>
