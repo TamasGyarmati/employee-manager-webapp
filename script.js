@@ -26,8 +26,8 @@ addBtn.addEventListener("click", () => {
         name: name,
         email: email,
         phoneNumber: phone,
-        salary: salary
-    }
+        salary: parseFloat(salary)
+    };
     
     fetch(employeePostUrl, {
         method: "POST",
@@ -37,13 +37,14 @@ addBtn.addEventListener("click", () => {
         body: JSON.stringify(newEmployee)
     })
     .then(response => {
-        if (!response.ok) throw new Error("API hiba");
-        return response.text();
+        if (!response.ok) throw new Error("API error");
+        return response.json();
     })    
-    .then(data => {
-        console.log("Sikeres POST:", data);
+    .then(employee => {
+        console.log("Succesful POST:", employee);
 
         let tr = document.createElement("tr");
+        tr.dataset.id = employee.id;
 
         let tdName = document.createElement("td");
         tdName.innerText = name;
@@ -69,8 +70,9 @@ addBtn.addEventListener("click", () => {
 
         createEditBtn.addEventListener("click", (e) => {
             const row = e.target.closest("tr");
-            const editName = row.querySelector("td").innerText;
-            console.log(name);
+            const id = row.dataset.id;
+
+            window.location.href = `edit.html?id=${id}`;
         })
 
         tr.appendChild(tdName);
@@ -90,8 +92,8 @@ addBtn.addEventListener("click", () => {
         salaryInput.value = "";
     })
     .catch(error => {
-        console.error("Hiba: ", error);
-        alert("Nem sikerült menteni az adatot.")
+        console.error("Error: ", error);
+        alert("Couldn't save the data")
     })
 });
 
