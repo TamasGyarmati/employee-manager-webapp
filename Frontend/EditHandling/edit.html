@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Edit Employee</title>
+  <title>Edit Employee</title>  
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
     rel="stylesheet"
   />
+  <link rel="stylesheet" href="editStyle.css">
   <script src="editScript.js" defer></script>
 </head>
 <body class="container py-3">
@@ -31,7 +32,8 @@
       <label for="salaryInput" class="form-label">Salary</label>
       <input type="number" id="salaryInput" class="form-control" required />
     </div>
-
-    <button type="submit" class="btn btn-primary">Save</button>
-    <button type="button" id="cancelBtn" class="btn btn-secondary ms-2">Cancel</button>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Save</button>
+      <button type="button" id="cancelBtn" class="btn btn-secondary ms-2">Cancel</button>
+    </div>
   </form>

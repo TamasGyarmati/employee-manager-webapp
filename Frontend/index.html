@@ -3,17 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
     <title>Student</title>
   </head>
   <body>
+    <!-- navbar -->
     <div class="parent">
       <div class="div1">
         <h1>Student Handler</h1>
@@ -45,7 +46,7 @@
         <form id="employeeForm">
           <input type="text" id="nameInput" placeholder="Name" maxlength="30" required/>
           <input type="email" id="emailInput" placeholder="Email" maxlength="35" required/>
-          <input type="tel" id="phoneInput" placeholder="Phone" maxlength="20" pattern="^\+\d{1,3}\s?\d{1,14}(\s?\d{1,13})?$" required/>
+          <input type="tel" id="phoneInput" placeholder="Phone" maxlength="12" pattern="^\+\d{1,3}\s?\d{1,14}(\s?\d{1,13})?$" required/>
           <input type="text" id="salaryInput" placeholder="Salary" maxlength="7" required/>
           <button type="submit" id="addButton" class="btn btn-primary">Add</button>
         </form>

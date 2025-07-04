@@ -8,7 +8,7 @@
 .parent {
 display: grid;
 grid-template-columns: 1fr;
-grid-template-rows: auto auto auto auto;
+grid-template-rows: auto auto auto auto auto;
 grid-column-gap: 0px;
 grid-row-gap: 0px; /* később 80 vagy több px */
 }
@@ -17,6 +17,8 @@ grid-row-gap: 0px; /* később 80 vagy több px */
 .div2 { grid-area: 2 / 1 / 3 / 2; }
 .div3 { grid-area: 3 / 1 / 4 / 2; }
 .div4 { grid-area: 4 / 1 / 5 / 2; }
+.navbar { grid-area: 1 / 1 / 2 / 2; }
+
 
 .div1 {
     text-align: center;
@@ -27,11 +29,19 @@ h1 {
     display: inline-block; /* parent element -> text-align: center */
 }
 
+p {
+    transition: transform 0.3s;   
+}
+
+p:hover {
+    transform: translateY(-10px);
+}
+
 h1:hover {
     transform: translateY(-10px);
 }
 
-.div4 {
+form {
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -41,4 +51,27 @@ input {
     text-align: center;
     border: 1px solid black;
     border-radius: 10px;
+}
+
+.btn-warning:active,
+.btn-danger:active,
+.btn-primary:active {
+    opacity: 0.6;
+}
+
+.btn-warning,
+.btn-danger,
+.btn-primary {
+    width: 70px;
+}
+
+.btn {
+    position: relative;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+.btn-primary:hover,
+.btn-warning:hover,
+.btn-danger:hover {
+    transform: translateY(-10px);
 }

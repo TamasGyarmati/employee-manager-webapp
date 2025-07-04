@@ -1,0 +1,52 @@
+* {
+    margin: 20px;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+h1 {
+    padding-top: 30px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+h1:hover {
+    transform: translateY(-10px);
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label.form-label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+label.form-label {
+  margin-left: 0;  
+  padding-left: 0; 
+}
+
+.btn-primary,
+.btn-secondary {
+    width: 70px;
+}
+
+.btn-secondary:active
+.btn-primary:active {
+    opacity: 0.6;
+}
+
+.btn {
+    position: relative;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    transform: translateY(-10px);
+}
