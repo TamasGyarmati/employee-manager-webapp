@@ -4833,11 +4833,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\GYT6BP\\source\\repos\\Training\\Training\\Training.csproj",
+      "projectUniqueName": "C:\\Users\\GYT6BP\\Documents\\Visual Studio Code Projects\\Portfolio\\Backend\\Training\\Training\\Training.csproj",
       "projectName": "Training",
-      "projectPath": "C:\\Users\\GYT6BP\\source\\repos\\Training\\Training\\Training.csproj",
+      "projectPath": "C:\\Users\\GYT6BP\\Documents\\Visual Studio Code Projects\\Portfolio\\Backend\\Training\\Training\\Training.csproj",
       "packagesPath": "C:\\Users\\GYT6BP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\GYT6BP\\source\\repos\\Training\\Training\\obj\\",
+      "outputPath": "C:\\Users\\GYT6BP\\Documents\\Visual Studio Code Projects\\Portfolio\\Backend\\Training\\Training\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

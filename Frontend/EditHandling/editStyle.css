@@ -1,52 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 * {
-    margin: 20px;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #3f5efb;
+  background: linear-gradient(
+    126deg,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
+  font-family: "Montserrat";
+  min-height: 100vh;
 }
 
 h1 {
-    padding-top: 30px;
-    text-align: center;
-    transition: transform 0.3s;
+  padding-top: 30px;
+  text-align: center;
+  transition: transform 0.3s;
 }
 
 h1:hover {
-    transform: translateY(-10px);
+  transform: translateY(-10px);
 }
 
 form {
-    max-width: 400px;
-    margin: 0 auto;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 label.form-label {
   display: block;
   margin-bottom: 0.25rem;
   font-weight: 600;
+  color: white;
 }
 
 label.form-label {
-  margin-left: 0;  
-  padding-left: 0; 
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .btn-primary,
 .btn-secondary {
-    width: 70px;
+  width: 80px;
 }
 
-.btn-secondary:active
+.btn-secondary:active,
 .btn-primary:active {
-    opacity: 0.6;
+  opacity: 0.6;
+  transform: scale(0.9) !important;
 }
 
 .btn {
-    position: relative;
-    transition: transform 0.3s ease, opacity 0.2s ease;
+  position: relative;
+  transition: transform 0.3s ease, opacity 0.2s ease;
 }
 
 .btn-primary:hover,
 .btn-secondary:hover {
-    transform: translateY(-10px);
+  transform: translateY(-10px);
 }

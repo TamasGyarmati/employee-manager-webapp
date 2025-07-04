@@ -16,8 +16,9 @@ const salaryInput = document.querySelector("#salaryInput");
 const table = document.querySelector("#table");
 const tbody = document.querySelector("#tbody");
 
-/* Others */
-const defaultCountryCode = "+36";
+/* Regex */
+const regexPhone = /^\+?\d+$/;
+const regexName = /^[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű\s]+$/;
 
 /* Functions */
 function handleDelete(e) {
@@ -67,14 +68,18 @@ function createEmployeeRow(employee) {
   tdName.innerText = employee.name;
 
   let tdEmail = document.createElement("td");
-  tdEmail.innerText = employee.email;
+  let aToMail = document.createElement("a");
+  aToMail.setAttribute("href", "mailto:" + employee.email);
+  aToMail.innerText = employee.email;
+  aToMail.classList.add("tableLinks");
+  tdEmail.appendChild(aToMail);
 
   let tdPhone = document.createElement("td");
   tdPhone.innerText = employee.phoneNumber;
 
   let tdSalary = document.createElement("td");
   const salaryAmount = employee.salary;
-  const formattedSalaryAmount = salaryAmount.toLocaleString('hu-HU') + ' Ft';
+  const formattedSalaryAmount = salaryAmount.toLocaleString("hu-HU") + " Ft";
   tdSalary.innerText = formattedSalaryAmount;
 
   let tdEditBtn = document.createElement("td");
@@ -83,6 +88,10 @@ function createEmployeeRow(employee) {
   createEditBtn.classList.add("btn", "btn-warning");
   createEditBtn.innerText = "Edit";
   createEditBtn.addEventListener("click", handleEdit);
+  createEditBtn.addEventListener("click", () => {
+    localStorage.setItem("scrollPosition", window.scrollY);
+    window.location.href = `EditHandling/edit.html?id=${id}`;
+  });
 
   let tdDeleteBtn = document.createElement("td");
   let createDeleteBtn = document.createElement("button");
@@ -103,6 +112,7 @@ function createEmployeeRow(employee) {
   tbody.appendChild(tr);
 }
 
+/* Get All Employee API call */
 function loadEmployees() {
   fetch(employeesGetUrl)
     .then((response) => {
@@ -122,11 +132,56 @@ function loadEmployees() {
 
 window.addEventListener("DOMContentLoaded", loadEmployees);
 
+document.addEventListener("DOMContentLoaded", () => {
+  const reveals = document.querySelectorAll(".scroll-reveal");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+        } else {
+          entry.target.classList.remove("revealed");
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  reveals.forEach((el) => observer.observe(el));
+});
+
+/* After editing go back to the same place */
+window.addEventListener("load", () => {
+  const y = localStorage.getItem("scrollPosition");
+  if (y !== null) {
+    window.scrollTo(0, parseInt(y));
+    localStorage.removeItem("scrollPosition");
+  }
+});
+
 /* Create (Add / Post) */
-addBtn.addEventListener("click", () => {
+addBtn.addEventListener("click", (e) => {
+  e.preventDefault(); /* form submit doesn't re-load */
+
+  if (salaryInput.value < 0) {
+    alert("Salary can't be negative!");
+    return;
+  }
+
+  if (!regexPhone.test(phoneInput.value)) {
+    alert("Use only '+' and numbers in the phone number input.");
+    return;
+  }
+
+  if (!regexName.test(nameInput.value)) {
+    alert("Don't use any symbols or numbers!");
+    return;
+  }
+
   const rawPhone = phoneInput.value;
-  const cleanedPhone = rawPhone.replace(/\s+/g, '');
-  
+  const cleanedPhone = rawPhone.replace(/\s+/g, "");
+
   const newEmployee = {
     name: nameInput.value,
     email: emailInput.value,
@@ -154,6 +209,10 @@ addBtn.addEventListener("click", () => {
       emailInput.value = "";
       phoneInput.value = "";
       salaryInput.value = "";
+
+      document
+        .getElementById("database")
+        .scrollIntoView({ behavior: "smooth" });
     })
     .catch((error) => {
       console.error("Error: ", error);

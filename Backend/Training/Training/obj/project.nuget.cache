@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Voj5drKaCak=",
+  "dgSpecHash": "v52NCFNmgAs=",
   "success": true,
-  "projectFilePath": "C:\\Users\\GYT6BP\\source\\repos\\Training\\Training\\Training.csproj",
+  "projectFilePath": "C:\\Users\\GYT6BP\\Documents\\Visual Studio Code Projects\\Portfolio\\Backend\\Training\\Training\\Training.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\GYT6BP\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\GYT6BP\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
