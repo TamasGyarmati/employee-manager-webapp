@@ -60,7 +60,7 @@ body::selection {
 }
 
 h1:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px); /* music branch */
 }
 
 .glassy-input {
