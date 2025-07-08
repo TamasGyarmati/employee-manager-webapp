@@ -31,7 +31,7 @@ body::selection {
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto auto auto;
   grid-column-gap: 0px;
-  grid-row-gap: 200px;
+  grid-row-gap: 55vh;
 }
 
 .div1 {
@@ -76,7 +76,7 @@ body::selection {
 }
 
 .div1 h1 {
-  padding-top: 90px;
+  padding-top: 20vh;
   padding-bottom: 110px;
   margin: 0;
   font-size: 80px;
@@ -226,15 +226,15 @@ footer {
 
 #description,
 #employee-handler {
-  scroll-margin-top: 200px;
+  scroll-margin-top: 35vh;
 }
 
 #database {
-  scroll-margin-top: 150px;
+  scroll-margin-top: 30vh;
 }
 
 #contact {
-  scroll-margin-top: 150px;
+  scroll-margin-top: 30vh;
 }
 
 @media screen and (max-width: 1200px) {

@@ -10,6 +10,11 @@ const salaryInput = document.getElementById("salaryInput");
 const regexPhone = /^\+?\d+$/;
 const regexName = /^[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű\s]+$/;
 
+window.addEventListener("load", () => {
+  const elements = document.querySelectorAll(".scroll-reveal");
+  elements.forEach(el => el.classList.add("revealed"));
+});
+
 fetch(`${apiUrl}/api/employees/${id}`)
   .then((response) => {
     if (!response.ok) throw new Error("Employee not found");

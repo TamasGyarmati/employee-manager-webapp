@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="/Portfolio/Frontend/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="todoStyle.css" />
+    <script src="todoScript.js" defer></script>
+    <title>To-do Manager</title>
+  </head>
+  <body class="scroll-reveal">
+    <div class="parent">
+      <div class="title">
+        <h1>To-do Manager</h1>
+      </div>
+      <div class="container">
+        <input
+          id="title"
+          type="text"
+          placeholder="Title"
+          class="placeHolder glassy-input"
+        />
+        <textarea
+          name="description"
+          id="description"
+          placeholder="Write your description here..."
+          class="glassy-input placeHolder fixed-textarea"
+        ></textarea>
+      </div>
+      <div class="button">
+        <button class="btn btn-primary goBackBtn" id="goBack">Go back</button>
+        <button class="btn btn-success addActivity" id="activity">
+          Add activity
+        </button>
+      </div>
+      <table class="table glassy-table">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th class="statusTh" scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="secondTitle">
+        <h1>All done!</h1>
+      </div>
+    </div>
+  </body>
+</html>

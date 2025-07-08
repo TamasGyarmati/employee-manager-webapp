@@ -16,28 +16,28 @@
     <link rel="stylesheet" href="editStyle.css" />
     <script src="editScript.js" defer></script>
   </head>
-  <body class="container py-3">
+  <body class="scroll-reveal container py-3">
     <h1>Edit Employee</h1>
 
     <form id="editForm">
       <div class="mb-3">
         <label for="nameInput" class="form-label">Name</label>
-        <input type="text" id="nameInput" class="form-control" maxlength="30" required />
+        <input type="text" id="nameInput" class="form-control glassy-input" maxlength="30" required />
       </div>
       <div class="mb-3">
         <label for="emailInput" class="form-label">Email</label>
-        <input type="email" id="emailInput" class="form-control" maxlength="35" required />
+        <input type="email" id="emailInput" class="form-control glassy-input" maxlength="35" required />
       </div>
       <div class="mb-3">
         <label for="phoneInput" class="form-label">Phone</label>
-        <input type="tel" id="phoneInput" class="form-control" maxlength="12" pattern="^\+\d{1,3}\s?\d{1,14}(\s?\d{1,13})?$" required />
+        <input type="tel" id="phoneInput" class="form-control glassy-input" maxlength="12" pattern="^\+\d{1,3}\s?\d{1,14}(\s?\d{1,13})?$" required />
       </div>
       <div class="mb-3">
         <label for="salaryInput" class="form-label">Salary</label>
         <input
           type="number"
           id="salaryInput"
-          class="form-control"
+          class="form-control glassy-input"
           min="0"
           maxlength="7"
           required

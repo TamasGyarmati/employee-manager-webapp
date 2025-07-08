@@ -21,44 +21,82 @@ const regexPhone = /^\+?\d+$/;
 const regexName = /^[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű\s]+$/;
 
 /* Functions */
-function handleDelete(e) {
-  const row = e.target.closest("tr");
-  const id = row.dataset.id;
 
-  if (!id) {
-    alert("Error: there's no ID paired to this row");
-    return;
-  }
 
-  const confirmed = confirm("Do you wish to delete the employee?");
-  if (!confirmed) {
-    return;
-  }
-
-  fetch(`${apiUrl}/api/employees?id=${id}`, {
-    method: "DELETE",
-  })
+/* Get All Employee API call */
+function loadEmployees() {
+  fetch(employeesGetUrl)
     .then((response) => {
-      if (!response.ok) {
-        throw new Error("Couldn't delete employee.");
-      }
-
-      console.log(response.text());
-
-      row.remove(); // kitörli a táblázatból
+      if (!response.ok) throw new Error("Get request failed.");
+      return response.json();
+    })
+    .then((employees) => {
+      tbody.innerHTML = "";
+      employees.forEach((employee) => {
+        createEmployeeRow(employee);
+      });
     })
     .catch((error) => {
-      console.error("Deleting error: ", error);
-      alert("There has been an error while deleting.");
+      console.error(error);
     });
 }
 
-function handleEdit(e) {
-  const row = e.target.closest("tr");
-  const id = row.dataset.id;
+/* Add new employee to the database */
+addBtn.addEventListener("click", (e) => {
+  e.preventDefault(); /* form submit doesn't re-load */
 
-  window.location.href = `EditHandling/edit.html?id=${id}`;
-}
+  if (salaryInput.value < 0) {
+    alert("Salary can't be negative!");
+    return;
+  }
+
+  if (!regexPhone.test(phoneInput.value)) {
+    alert("Use only '+' and numbers in the phone number input.");
+    return;
+  }
+
+  if (!regexName.test(nameInput.value)) {
+    alert("Don't use any symbols or numbers!");
+    return;
+  }
+
+  const rawPhone = phoneInput.value;
+  const cleanedPhone = rawPhone.replace(/\s+/g, "");
+
+  const newEmployee = {
+    name: nameInput.value,
+    email: emailInput.value,
+    phoneNumber: cleanedPhone,
+    salary: parseFloat(salaryInput.value),
+  };
+
+  fetch(employeePostUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newEmployee),
+  })
+    .then((response) => {
+      if (!response.ok) throw new Error("API error");
+      return response.json();
+    })
+    .then((employee) => {
+      console.log("Succesful POST:", employee);
+
+      createEmployeeRow(employee);
+
+      nameInput.value = "";
+      emailInput.value = "";
+      phoneInput.value = "";
+      salaryInput.value = "";
+
+      document.getElementById("database").scrollIntoView({ behavior: "smooth" });
+    })
+    .catch((error) => {
+      console.error("Error: ", error);
+    });
+});
 
 function createEmployeeRow(employee) {
   let tr = document.createElement("tr");
@@ -112,24 +150,55 @@ function createEmployeeRow(employee) {
   tbody.appendChild(tr);
 }
 
-/* Get All Employee API call */
-function loadEmployees() {
-  fetch(employeesGetUrl)
+function handleEdit(e) {
+  const row = e.target.closest("tr");
+  const id = row.dataset.id;
+
+  window.location.href = `EditHandling/edit.html?id=${id}`;
+}
+
+function handleDelete(e) {
+  const row = e.target.closest("tr");
+  const id = row.dataset.id;
+
+  if (!id) {
+    alert("Error: there's no ID paired to this row");
+    return;
+  }
+
+  const confirmed = confirm("Do you wish to delete the employee?");
+  if (!confirmed) {
+    return;
+  }
+
+  fetch(`${apiUrl}/api/employees?id=${id}`, {
+    method: "DELETE",
+  })
     .then((response) => {
-      if (!response.ok) throw new Error("Get request failed.");
-      return response.json();
-    })
-    .then((employees) => {
-      tbody.innerHTML = "";
-      employees.forEach((employee) => {
-        createEmployeeRow(employee);
-      });
+      if (!response.ok) {
+        throw new Error("Couldn't delete employee.");
+      }
+
+      console.log(response.text());
+
+      row.remove(); // kitörli a táblázatból
     })
     .catch((error) => {
-      console.error(error);
+      console.error("Deleting error: ", error);
+      alert("There has been an error while deleting.");
     });
 }
 
+/* After editing go back to the same place */
+window.addEventListener("load", () => {
+  const y = localStorage.getItem("scrollPosition");
+  if (y !== null) {
+    window.scrollTo(0, parseInt(y));
+    localStorage.removeItem("scrollPosition");
+  }
+});
+
+/* DOM */
 window.addEventListener("DOMContentLoaded", loadEmployees);
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -149,72 +218,4 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   reveals.forEach((el) => observer.observe(el));
-});
-
-/* After editing go back to the same place */
-window.addEventListener("load", () => {
-  const y = localStorage.getItem("scrollPosition");
-  if (y !== null) {
-    window.scrollTo(0, parseInt(y));
-    localStorage.removeItem("scrollPosition");
-  }
-});
-
-/* Create (Add / Post) */
-addBtn.addEventListener("click", (e) => {
-  e.preventDefault(); /* form submit doesn't re-load */
-
-  if (salaryInput.value < 0) {
-    alert("Salary can't be negative!");
-    return;
-  }
-
-  if (!regexPhone.test(phoneInput.value)) {
-    alert("Use only '+' and numbers in the phone number input.");
-    return;
-  }
-
-  if (!regexName.test(nameInput.value)) {
-    alert("Don't use any symbols or numbers!");
-    return;
-  }
-
-  const rawPhone = phoneInput.value;
-  const cleanedPhone = rawPhone.replace(/\s+/g, "");
-
-  const newEmployee = {
-    name: nameInput.value,
-    email: emailInput.value,
-    phoneNumber: cleanedPhone,
-    salary: parseFloat(salaryInput.value),
-  };
-
-  fetch(employeePostUrl, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(newEmployee),
-  })
-    .then((response) => {
-      if (!response.ok) throw new Error("API error");
-      return response.json();
-    })
-    .then((employee) => {
-      console.log("Succesful POST:", employee);
-
-      createEmployeeRow(employee);
-
-      nameInput.value = "";
-      emailInput.value = "";
-      phoneInput.value = "";
-      salaryInput.value = "";
-
-      document
-        .getElementById("database")
-        .scrollIntoView({ behavior: "smooth" });
-    })
-    .catch((error) => {
-      console.error("Error: ", error);
-    });
 });
