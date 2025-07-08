@@ -22,7 +22,6 @@ const regexName = /^[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű\s]+$/;
 
 /* Functions */
 
-
 /* Get All Employee API call */
 function loadEmployees() {
   fetch(employeesGetUrl)
@@ -181,7 +180,7 @@ function handleDelete(e) {
 
       console.log(response.text());
 
-      row.remove(); // kitörli a táblázatból
+      row.remove(); // Deletes the row
     })
     .catch((error) => {
       console.error("Deleting error: ", error);
@@ -200,7 +199,6 @@ window.addEventListener("load", () => {
 
 /* DOM */
 window.addEventListener("DOMContentLoaded", loadEmployees);
-
 document.addEventListener("DOMContentLoaded", () => {
   const reveals = document.querySelectorAll(".scroll-reveal");
 
