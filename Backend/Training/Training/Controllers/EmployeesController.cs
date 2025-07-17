@@ -43,14 +43,10 @@ namespace Training.Controllers
         public async Task<IActionResult> CreateEmployee([FromBody] Employee employee)
         {
             if (employee is null)
-            {
                 return NotFound();
-            }
 
             if (employee.Id == Guid.Empty)
-            {
                 employee.Id = Guid.NewGuid();
-            }
 
             await _repository.CreateAsync(employee);
 
@@ -60,8 +56,10 @@ namespace Training.Controllers
         [HttpPost("dto")] // Only accepts the needed params
         public async Task<IActionResult> CreateEmployee(AddEmployeeDto addEmployeeDto)
         {
-            if (addEmployeeDto is null) return NotFound();
+            if (addEmployeeDto is null)
+                return NotFound();
 
+            // Mapping the parameter to the entity to be saved in EF Core
             var employeeEntity = new Employee()
             {
                 Name = addEmployeeDto.Name,
@@ -97,7 +95,7 @@ namespace Training.Controllers
                 Name = updateEmployeeDto.Name,
                 Email = updateEmployeeDto.Email,
                 PhoneNumber = updateEmployeeDto.PhoneNumber,
-                Salary= updateEmployeeDto.Salary
+                Salary = updateEmployeeDto.Salary
             };
 
             await _repository.UpdateAsync(id, newEmployee);

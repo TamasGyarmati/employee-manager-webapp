@@ -5,10 +5,124 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Employees": {
+    "/api/fast": {
+      "post": {
+        "tags": [
+          "Training"
+        ],
+        "operationId": "TrainingFastEndpointsCreateEmployeeEndpoint",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Employee"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
       "get": {
         "tags": [
-          "Employees"
+          "Training"
+        ],
+        "operationId": "TrainingFastEndpointsGetEmployeesEndpoint",
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/api/fast/{id}": {
+      "delete": {
+        "tags": [
+          "Training"
+        ],
+        "operationId": "TrainingFastEndpointsDeleteEmployeeEndpoint",
+        "requestBody": {
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteEmployeeRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteEmployeeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Training"
+        ],
+        "operationId": "TrainingFastEndpointsGetEmployeeEndpoint",
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Training"
+        ],
+        "operationId": "TrainingFastEndpointsUpdateEmployeeEndpoint",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Employee"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/employees": {
+      "get": {
+        "tags": [
+          "Training"
         ],
         "responses": {
           "200": {
@@ -18,12 +132,13 @@
       },
       "delete": {
         "tags": [
-          "Employees"
+          "Training"
         ],
         "parameters": [
           {
             "name": "id",
             "in": "query",
+            "required": true,
             "schema": {
               "type": "string",
               "format": "uuid"
@@ -37,10 +152,10 @@
         }
       }
     },
-    "/api/Employees/{id}": {
+    "/api/employees/{id}": {
       "get": {
         "tags": [
-          "Employees"
+          "Training"
         ],
         "parameters": [
           {
@@ -60,10 +175,10 @@
         }
       }
     },
-    "/api/Employees/json": {
+    "/api/employees/json": {
       "post": {
         "tags": [
-          "Employees"
+          "Training"
         ],
         "requestBody": {
           "content": {
@@ -71,18 +186,9 @@
               "schema": {
                 "$ref": "#/components/schemas/Employee"
               }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Employee"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Employee"
-              }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -92,12 +198,13 @@
       },
       "put": {
         "tags": [
-          "Employees"
+          "Training"
         ],
         "parameters": [
           {
             "name": "id",
             "in": "query",
+            "required": true,
             "schema": {
               "type": "string",
               "format": "uuid"
@@ -110,18 +217,9 @@
               "schema": {
                 "$ref": "#/components/schemas/Employee"
               }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Employee"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Employee"
-              }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -130,10 +228,10 @@
         }
       }
     },
-    "/api/Employees/dto": {
+    "/api/employees/dto": {
       "post": {
         "tags": [
-          "Employees"
+          "Training"
         ],
         "requestBody": {
           "content": {
@@ -141,18 +239,9 @@
               "schema": {
                 "$ref": "#/components/schemas/AddEmployeeDto"
               }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AddEmployeeDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/AddEmployeeDto"
-              }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -162,12 +251,13 @@
       },
       "put": {
         "tags": [
-          "Employees"
+          "Training"
         ],
         "parameters": [
           {
             "name": "id",
             "in": "query",
+            "required": true,
             "schema": {
               "type": "string",
               "format": "uuid"
@@ -180,18 +270,9 @@
               "schema": {
                 "$ref": "#/components/schemas/UpdateEmployeeDto"
               }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateEmployeeDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateEmployeeDto"
-              }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -229,10 +310,21 @@
         },
         "additionalProperties": false
       },
+      "DeleteEmployeeRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
       "Employee": {
         "required": [
           "email",
-          "name"
+          "name",
+          "salary"
         ],
         "type": "object",
         "properties": {
@@ -241,12 +333,13 @@
             "format": "uuid"
           },
           "name": {
-            "type": "string",
-            "nullable": true
+            "minLength": 1,
+            "type": "string"
           },
           "email": {
+            "minLength": 1,
             "type": "string",
-            "nullable": true
+            "format": "email"
           },
           "phoneNumber": {
             "type": "string",
@@ -255,6 +348,32 @@
           "salary": {
             "type": "number",
             "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "integer",
+            "format": "int32",
+            "default": 400
+          },
+          "message": {
+            "type": "string",
+            "default": "One or more errors occurred!",
+            "nullable": true
+          },
+          "errors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false

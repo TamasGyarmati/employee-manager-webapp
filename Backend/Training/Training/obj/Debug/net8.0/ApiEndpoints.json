@@ -1,36 +1,26 @@
 [
   {
-    "ContainingType": "Training.Controllers.EmployeesController",
-    "Method": "GetAllEmployees",
-    "RelativePath": "api/Employees",
+    "ContainingType": "Training.Endpoints.EmployeesEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEmployeeEndpoints\u003Eb__0_0",
+    "RelativePath": "api/employees/",
     "HttpMethod": "GET",
-    "IsController": true,
+    "IsController": false,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Training.Controllers.EmployeesController",
-    "Method": "DeleteEmployee",
-    "RelativePath": "api/Employees",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
+    "ReturnTypes": [
       {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": false
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
       }
-    ],
-    "ReturnTypes": []
+    ]
   },
   {
-    "ContainingType": "Training.Controllers.EmployeesController",
-    "Method": "GetEmployee",
-    "RelativePath": "api/Employees/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
+    "ContainingType": "Training.Endpoints.EmployeesEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEmployeeEndpoints\u003Eb__0_6",
+    "RelativePath": "api/employees/",
+    "HttpMethod": "DELETE",
+    "IsController": false,
     "Order": 0,
     "Parameters": [
       {
@@ -39,80 +29,249 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
   },
   {
-    "ContainingType": "Training.Controllers.EmployeesController",
-    "Method": "CreateEmployee",
-    "RelativePath": "api/Employees/dto",
-    "HttpMethod": "POST",
-    "IsController": true,
+    "ContainingType": "Training.Endpoints.EmployeesEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEmployeeEndpoints\u003Eb__0_1",
+    "RelativePath": "api/employees/{id}",
+    "HttpMethod": "GET",
+    "IsController": false,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "addEmployeeDto",
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Training.Endpoints.EmployeesEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEmployeeEndpoints\u003Eb__0_3",
+    "RelativePath": "api/employees/dto",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "employee",
         "Type": "Training.Dtos.AddEmployeeDto",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
   },
   {
-    "ContainingType": "Training.Controllers.EmployeesController",
-    "Method": "UpdateEmployee",
-    "RelativePath": "api/Employees/dto",
+    "ContainingType": "Training.Endpoints.EmployeesEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEmployeeEndpoints\u003Eb__0_5",
+    "RelativePath": "api/employees/dto",
     "HttpMethod": "PUT",
-    "IsController": true,
+    "IsController": false,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": false
-      },
-      {
-        "Name": "updateEmployeeDto",
+        "Name": "employee",
         "Type": "Training.Dtos.UpdateEmployeeDto",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Training.Controllers.EmployeesController",
-    "Method": "CreateEmployee",
-    "RelativePath": "api/Employees/json",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "employee",
-        "Type": "Training.Entities.Employee",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Training.Controllers.EmployeesController",
-    "Method": "UpdateEmployee",
-    "RelativePath": "api/Employees/json",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
+      },
       {
         "Name": "id",
         "Type": "System.Guid",
-        "IsRequired": false
-      },
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Training.Endpoints.EmployeesEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEmployeeEndpoints\u003Eb__0_2",
+    "RelativePath": "api/employees/json",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
       {
         "Name": "employee",
         "Type": "Training.Entities.Employee",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Training.Endpoints.EmployeesEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEmployeeEndpoints\u003Eb__0_4",
+    "RelativePath": "api/employees/json",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "employee",
+        "Type": "Training.Entities.Employee",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
+    "Method": "\u003CMapFastEndpoints\u003Eb__2_1",
+    "RelativePath": "api/fast",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Employee",
+        "Type": "Training.Entities.Employee",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      },
+      {
+        "Type": "FastEndpoints.ErrorResponse",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 400
+      }
+    ],
+    "EndpointName": "TrainingFastEndpointsCreateEmployeeEndpoint"
+  },
+  {
+    "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
+    "Method": "\u003CMapFastEndpoints\u003Eb__2_1",
+    "RelativePath": "api/fast",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      }
+    ],
+    "EndpointName": "TrainingFastEndpointsGetEmployeesEndpoint"
+  },
+  {
+    "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
+    "Method": "\u003CMapFastEndpoints\u003Eb__2_1",
+    "RelativePath": "api/fast/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "DeleteEmployeeRequest",
+        "Type": "Training.FastEndpoints.DeleteEmployeeRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      }
+    ],
+    "EndpointName": "TrainingFastEndpointsDeleteEmployeeEndpoint"
+  },
+  {
+    "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
+    "Method": "\u003CMapFastEndpoints\u003Eb__2_1",
+    "RelativePath": "api/fast/{id}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      }
+    ],
+    "EndpointName": "TrainingFastEndpointsGetEmployeeEndpoint"
+  },
+  {
+    "ContainingType": "FastEndpoints.MainExtensions\u002B\u003C\u003Ec",
+    "Method": "\u003CMapFastEndpoints\u003Eb__2_1",
+    "RelativePath": "api/fast/{id}",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Employee",
+        "Type": "Training.Entities.Employee",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 204
+      },
+      {
+        "Type": "FastEndpoints.ErrorResponse",
+        "MediaTypes": [
+          "application/problem\u002Bjson"
+        ],
+        "StatusCode": 400
+      }
+    ],
+    "EndpointName": "TrainingFastEndpointsUpdateEmployeeEndpoint"
   }
 ]

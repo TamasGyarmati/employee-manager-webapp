@@ -1,11 +1,18 @@
-﻿namespace Training.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Training.Entities
 {
     public class Employee
     {
+        // [Key] would only need if property wasn't named 'ID' 
         public Guid Id { get; set; }
-        public required string Name { get; set; }
-        public required string Email { get; set; }
+        [Required]
+        public string Name { get; set; }
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; }
         public string? PhoneNumber { get; set; }
+        [Required]
         public decimal Salary { get; set; }
     }
 }
