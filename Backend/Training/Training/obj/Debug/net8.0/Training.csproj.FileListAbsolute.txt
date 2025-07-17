@@ -357,3 +357,21 @@ C:\Users\GYT6BP\source\repos\Training\Training\bin\Debug\net8.0\NSwag.Core.Yaml.
 C:\Users\GYT6BP\source\repos\Training\Training\bin\Debug\net8.0\NSwag.Generation.dll
 C:\Users\GYT6BP\source\repos\Training\Training\bin\Debug\net8.0\NSwag.Generation.AspNetCore.dll
 C:\Users\GYT6BP\source\repos\Training\Training\bin\Debug\net8.0\YamlDotNet.dll
+C:\Users\GYT6BP\Documents\Visual Studio Code Projects\Portfolio\Backend\Training\Training\bin\Debug\net8.0\FastEndpoints.dll
+C:\Users\GYT6BP\Documents\Visual Studio Code Projects\Portfolio\Backend\Training\Training\bin\Debug\net8.0\FastEndpoints.Attributes.dll
+C:\Users\GYT6BP\Documents\Visual Studio Code Projects\Portfolio\Backend\Training\Training\bin\Debug\net8.0\FastEndpoints.Messaging.Core.dll
+C:\Users\GYT6BP\Documents\Visual Studio Code Projects\Portfolio\Backend\Training\Training\bin\Debug\net8.0\FastEndpoints.Swagger.dll
+C:\Users\GYT6BP\Documents\Visual Studio Code Projects\Portfolio\Backend\Training\Training\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\GYT6BP\Documents\Visual Studio Code Projects\Portfolio\Backend\Training\Training\bin\Debug\net8.0\Namotion.Reflection.dll
+C:\Users\GYT6BP\Documents\Visual Studio Code Projects\Portfolio\Backend\Training\Training\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\GYT6BP\Documents\Visual Studio Code Projects\Portfolio\Backend\Training\Training\bin\Debug\net8.0\NJsonSchema.dll
+C:\Users\GYT6BP\Documents\Visual Studio Code Projects\Portfolio\Backend\Training\Training\bin\Debug\net8.0\NJsonSchema.Annotations.dll
+C:\Users\GYT6BP\Documents\Visual Studio Code Projects\Portfolio\Backend\Training\Training\bin\Debug\net8.0\NJsonSchema.NewtonsoftJson.dll
+C:\Users\GYT6BP\Documents\Visual Studio Code Projects\Portfolio\Backend\Training\Training\bin\Debug\net8.0\NJsonSchema.Yaml.dll
+C:\Users\GYT6BP\Documents\Visual Studio Code Projects\Portfolio\Backend\Training\Training\bin\Debug\net8.0\NSwag.Annotations.dll
+C:\Users\GYT6BP\Documents\Visual Studio Code Projects\Portfolio\Backend\Training\Training\bin\Debug\net8.0\NSwag.AspNetCore.dll
+C:\Users\GYT6BP\Documents\Visual Studio Code Projects\Portfolio\Backend\Training\Training\bin\Debug\net8.0\NSwag.Core.dll
+C:\Users\GYT6BP\Documents\Visual Studio Code Projects\Portfolio\Backend\Training\Training\bin\Debug\net8.0\NSwag.Core.Yaml.dll
+C:\Users\GYT6BP\Documents\Visual Studio Code Projects\Portfolio\Backend\Training\Training\bin\Debug\net8.0\NSwag.Generation.dll
+C:\Users\GYT6BP\Documents\Visual Studio Code Projects\Portfolio\Backend\Training\Training\bin\Debug\net8.0\NSwag.Generation.AspNetCore.dll
+C:\Users\GYT6BP\Documents\Visual Studio Code Projects\Portfolio\Backend\Training\Training\bin\Debug\net8.0\YamlDotNet.dll

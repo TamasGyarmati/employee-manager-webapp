@@ -5,9 +5,9 @@ using Training.Entities;
 
 namespace Training.Endpoints
 {
-    public static class EmployeesEndpoints
+    public static class EmployeesEndpointsFix
     {
-        public static void MapEmployeeEndpoints(this IEndpointRouteBuilder app)
+        public static void MapEmployeeEndpointsFix(this IEndpointRouteBuilder app)
         {
             var group = app.MapGroup("/api/employees");
 

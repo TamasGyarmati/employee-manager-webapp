@@ -4,8 +4,8 @@ using Training.Data;
 
 namespace Training.FastEndpoints
 {
-    public record class DeleteEmployeeRequest(Guid Id);
-    public class DeleteEmployeeEndpoint : Endpoint<DeleteEmployeeRequest>
+    //public record class DeleteEmployeeRequest(Guid Id);
+    public class DeleteEmployeeEndpoint : EndpointWithoutRequest
     {
         private readonly IEmployeeRepository _repository;
         public DeleteEmployeeEndpoint(IEmployeeRepository repository)
@@ -23,9 +23,10 @@ namespace Training.FastEndpoints
             });
         }
 
-        public override async Task HandleAsync(DeleteEmployeeRequest req, CancellationToken ct)
+        public override async Task HandleAsync(CancellationToken ct)
         {          
-            await _repository.DeleteAsync(req.Id);
+            var id = Route<Guid>("id");
+            await _repository.DeleteAsync(id);
             await SendAsync($"Successfully deleted the employee at {DateTime.Now}", 200);
         }    
     }

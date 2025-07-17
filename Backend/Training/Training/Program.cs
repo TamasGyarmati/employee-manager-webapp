@@ -48,7 +48,7 @@ namespace Training
             app.UseFastEndpoints()
                .UseSwaggerGen();
                
-            app.MapEmployeeEndpoints();
+            app.MapEmployeeEndpointsFix();
 
             // Swagger
             if (app.Environment.IsDevelopment())
